@@ -1,0 +1,52 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+
+body {
+  min-height:100vh;
+  background:linear-gradient(135deg, #1d2671, #c33764);
+  color:white;
+  transition: background 1s ease;
+}
+
+body.profile-theme { background: linear-gradient(135deg,#0f2027,#203a43,#2c5364); }
+
+.navbar {
+  position:fixed; top:0; width:100%; height:60px; display:flex; align-items:center; justify-content:center; z-index:100;
+}
+
+.navbar h1 {
+  font-family: 'Orbitron', sans-serif; font-size:26px; letter-spacing:3px; cursor:pointer;
+}
+
+.back-btn { position:absolute; left:20px; font-size:28px; cursor:pointer; display:none; }
+
+.section { display:none; text-align:center; padding-top:100px; animation:fade 1s ease; }
+.section.active { display:block; }
+
+@keyframes fade { from{opacity:0; transform:translateY(25px);} to{opacity:1; transform:translateY(0);} }
+
+.profile-pic { width:120px; height:120px; border-radius:50%; border:4px solid white; cursor:pointer; object-fit:cover; object-position:center; display:block; margin:0 auto; }
+
+.profile-pic.big { width:200px; height:200px; margin-bottom:20px; }
+
+.profile-layout { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; }
+
+.card { background:rgba(255,255,255,0.15); max-width:320px; margin:auto; padding:22px; border-radius:16px; text-align:center; }
+.card h2 { margin-top:15px; margin-bottom:20px; font-size:22px; }
+.card p { margin-bottom:10px; font-size:17px; line-height:1.5; }
+
+.social-links { margin-top:20px; display:flex; justify-content:center; gap:20px; }
+.social-links a img { width:40px; height:40px; transition: transform 0.3s ease; cursor:pointer; }
+.social-links a img:hover { transform:scale(1.2); }
+
+.friends-layout { display:flex; justify-content:center; gap:25px; margin-top:30px; flex-wrap:wrap; }
+.friend-card { display:flex; flex-direction:column; align-items:center; cursor:pointer; transition: transform 0.3s ease; }
+.friend-card:hover { transform:scale(1.05); }
+.friend-card h3 { font-size:16px; text-align:center; margin-top:8px; }
+
+@media(max-width:700px){
+  .friends-layout { flex-direction:row; flex-wrap:wrap; gap:15px; }
+  .profile-pic.big { width:160px; height:160px; }
+  .profile-pic { width:100px; height:100px; }
+  .card h2 { font-size:20px; }
+  .card p { font-size:15px; }
+}
